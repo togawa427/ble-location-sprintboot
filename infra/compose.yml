@@ -7,8 +7,9 @@ services:
       - "5432:5432"
     restart: always
     environment:
-      - POSTGRES_USER=${USER_NAME}
-      - POSTGRES_PASSWORD=${USER_PASS}
+      POSTGRES_USER: ${USER_NAME}
+      POSTGRES_PASSWORD: ${USER_PASS}
+      POSTGRES_DB: blelocation_db
     volumes:
       - db_vol:/var/lib/postgresql
 
