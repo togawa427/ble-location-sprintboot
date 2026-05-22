@@ -30,11 +30,6 @@ public class UserController {
 	public User getUser(@PathVariable String beaconUuid) {
 		return userService.getUserByBeaconUuid(beaconUuid).orElseThrow(() -> new UserNotFoundException(beaconUuid));
 	}
-//	@GetMapping("/items/{itemId}")
-//	public Item getItem(@PathVariable("itemId") Long itemId) {
-//		// 結果がNullの場合自作例外を出すようにする
-//		return itemService.getItem(itemId).orElseThrow(() -> new ItemNotFoundException(itemId));
-//	}
 	
 	@PostMapping("/users")
 	public void addUser(@Valid @RequestBody User user) {
