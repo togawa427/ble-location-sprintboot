@@ -2,6 +2,7 @@ package com.togetine.blelocation_api.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class UserService {
 		userRepository.findAll().forEach(allUsers::add);
 		
 		return allUsers;
+	}
+	
+	public Optional<User> getUserByBeaconUuid(String beaconUuid) {
+		return userRepository.findByBeaconUuid(beaconUuid);
 	}
 	
 	public void addUser(User user) {
