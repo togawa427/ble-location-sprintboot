@@ -13,12 +13,14 @@ public class User {
 	private Long id;
 	
 	private String name;
+	private String beaconUuid;
 	
 	// コンストラクタ
 	public User() {}
 	
-	public User(String name) {
+	public User(String name, String beaconUuid) {
 		this.name = name;
+		this.beaconUuid = beaconUuid;
 	}
 	
 	// getter setter
@@ -33,6 +35,12 @@ public class User {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getBeaconUuid() {
+		return beaconUuid;
+	}
+	public void setBeaconUuid(String beaconUuid) {
+		this.beaconUuid = beaconUuid;
 	}
 	
 	
